@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import Card from '@/components/Card.vue'
+import Card from '@/components/ActionCard.vue'
 
 import { usePlayerStore } from '@/stores/PlayerStore';
 const player = usePlayerStore()

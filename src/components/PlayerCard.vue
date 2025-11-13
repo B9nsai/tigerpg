@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import Card from './Card.vue'
+import Card from './ActionCard.vue'
 
 defineProps({
   player: {
