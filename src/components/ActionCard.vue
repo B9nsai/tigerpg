@@ -1,5 +1,12 @@
 <template>
-  <div @click="$emit('gain', xp)" class="grid-rows-3 bg-white shadow-lg rounded-xl p-4 border border-gray-200 hover:shadow-xl transition h-64 w-48 mr-4 flex flex-col" >
+  <div @click="$emit('gain', xp)" 
+  class="grid-rows-3 shadow-lg rounded-xl p-4 border transition h-64 w-48 mr-4 flex flex-col"
+  :class="[
+      'p-4 rounded-lg border transition select-none',
+      isEnabled
+        ? 'bg-white border-b-cyan-100 cursor-pointer hover:shadow-lg'
+        : 'bg-gray-200 border-gray-400 cursor-not-allowed opacity-50'
+    ]" >
     
     <div class="mt-2 mx-2 h-full mb-2 flex items-center justify-center overflow-clip">
       <slot name="asset"></slot>
@@ -36,7 +43,12 @@ defineProps({
   xp: {
     type: Number,
     required: false,
-    default: 5
+    default: 5,
+  },
+  isEnabled: {
+    type: Boolean,
+    required: false,
+    default: false,
   }
 })
 </script>
