@@ -5,6 +5,11 @@ export const usePlayerStore = defineStore('player', {
         level: 1,
         xp: 0
     }),
+    getters: {
+    canUse: (state) => {
+      return (requiredLevel) => state.level >= requiredLevel
+    }
+  },
     actions: {
         gainXp(amount) {
             this.xp += amount
