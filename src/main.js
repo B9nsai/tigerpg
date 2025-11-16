@@ -16,7 +16,7 @@ const vuetify = createVuetify({
   directives,
   theme: {
     defaultTheme: 'light',
-  }
+  },
 })
 
 const app = createApp(App).use(vuetify).use(router).use(createPinia()).mount('#app')
